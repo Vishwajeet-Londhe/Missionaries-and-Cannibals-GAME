@@ -1,3 +1,5 @@
+from IPython.display import clear_output
+
 boat_side = 'Right'
 missionaries_on_right = 3
 cannibals_on_right = 3
@@ -5,7 +7,8 @@ missionaries_on_left = 0
 cannibals_on_left = 0
 
 print('Right Side')
-print('M = '+str(missionaries_on_left) +' C = ' + str(cannibals_on_left) + '|-----B|' + 'M = ' + str(missionaries_on_right) + ' C = ' +str(cannibals_on_right))
+print('\U0001f482'*missionaries_on_left,'\U0001f479'*cannibals_on_left,'\U0001f30a'*4,
+      '\U0001f6A2'*1,'\U0001f482'*missionaries_on_right,'\U0001f479'*cannibals_on_right)
 
 while True:
    
@@ -15,7 +18,7 @@ while True:
     missionaries = int(input('ENTER THE NUMBER OF MISSIONARIES ON BOAT: '))
     cannibals = int(input('ENTER THE NUMBER OF CANNIBALS BOAT: '))
     
-    if (missionaries + cannibals)<0 or (missionaries + cannibals)>2:
+    if (missionaries + cannibals)<0 or (missionaries + cannibals) > 2 :
       print('Invalid Move 1')
       continue
     else:
@@ -24,12 +27,11 @@ while True:
         continue
     
       else:
-        cannibals_on_right -= cannibals
-        missionaries_on_right -= missionaries
-        cannibals_on_left += cannibals
-        missionaries_on_left += missionaries
-
-        print('M = '+str(missionaries_on_left) +' C = ' + str(cannibals_on_left) + '|B-----|' + 'M = ' + str(missionaries_on_right) + ' C = ' +str(cannibals_on_right))
+        cannibals_on_right -= cannibals;missionaries_on_right -= missionaries
+        cannibals_on_left += cannibals;missionaries_on_left += missionaries
+        clear_output()
+        print('\U0001f482'*missionaries_on_left,'\U0001f479'*cannibals_on_left,'\U0001f6A2'*1,
+              '\U0001f30a'*4,'\U0001f482'*missionaries_on_right,'\U0001f479'*cannibals_on_right)
         boat_side = 'Left'
 
   ## BOAT ON LEFT SIDE
@@ -38,7 +40,7 @@ while True:
     missionaries = int(input('ENTER THE NUMBER OF MISSIONARIES ON BOAT: '))
     cannibals = int(input('ENTER THE NUMBER OF CANNIBALS BOAT: '))
     
-    if (missionaries + cannibals) < 0 or (missionaries + cannibals) > 2 :
+    if (missionaries + cannibals) < 0 or (missionaries + cannibals) > 2:
       print('Invalid Move 1')
       continue
     else:
@@ -46,12 +48,11 @@ while True:
         print('Invalid Move 2')
         continue
       else:
-        cannibals_on_left -= cannibals
-        missionaries_on_left -= missionaries
-        cannibals_on_right += cannibals
-        missionaries_on_right += missionaries
-
-        print('M = '+str(missionaries_on_left) +' C = ' + str(cannibals_on_left) + '|-----B|' + 'M = ' + str(missionaries_on_right) + ' C = ' +str(cannibals_on_right))
+        cannibals_on_left -= cannibals;missionaries_on_left -= missionaries
+        cannibals_on_right += cannibals;missionaries_on_right += missionaries
+        clear_output()
+        print('\U0001f482'*missionaries_on_left,'\U0001f479'*cannibals_on_left,'\U0001f30a'*4,
+              '\U0001f6A2'*1,'\U0001f482'*missionaries_on_right,'\U0001f479'*cannibals_on_right)
         boat_side = 'Right'
   
   ### GAME RESULT
